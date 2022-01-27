@@ -23,7 +23,6 @@ const app = createApp({
             this.changeStatus('loginStatus');
             axios.post(`${this.api.url}/admin/signin` , this.signinData)
             .then((res) => {
-                console.log(res.data);
                 const { token, expired } = res.data;
                 // 把token、expired存入cookie
                 document.cookie = `myToken = ${token}; expires = ${ new Date(expired) };`;

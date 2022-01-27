@@ -28,7 +28,6 @@ const app = createApp({
         checkLogin(){
             axios.post(`${this.api.url}/api/user/check`)
             .then((res) => {
-                console.log(res.data);
                 // 檢查登入狀態，成功的話取得商品資料
                 this.getData();
             })
@@ -41,7 +40,6 @@ const app = createApp({
         getData(){
             axios.get(`${this.api.url}/api/${this.api.path}/admin/products`)
             .then((res) => {
-                console.log(res.data.products);
                 // 取得api商品資料，存放tempProducts，準備渲染畫面
                 this.tempProducts = res.data.products;
             })
@@ -73,7 +71,6 @@ const app = createApp({
         deleteProduct(id){
             axios.delete(`${this.api.url}/api/${this.api.path}/admin/product/${id}`)
             .then((res) => {
-                console.log(res);
                 alert('刪除資料成功');
                 //刪除商品，再重新取得全部資料渲染
                 this.getData();
@@ -98,7 +95,6 @@ const app = createApp({
                     alert('新增商品完成');
                 })
                 .catch((err) => {
-                    console.dir(err);
                     alert('新增商品失敗')
                 })
             }else if (this.manageMode == 2) {
