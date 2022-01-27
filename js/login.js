@@ -33,6 +33,7 @@ const app = createApp({
                 window.location = 'products.html';
             })
             .catch((err) => {
+                console.dir(err);
                 this.changeStatus('loginStatus');
                 alert('登入失敗 , 請檢查帳號、密碼');
             })
