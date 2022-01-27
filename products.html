@@ -119,7 +119,7 @@
                         <label for="disable" class="form-label">商品不啟用</label>
                     </div>
                     <button type="submit" class="btn btn-outline-danger"
-                    @click="cancelDataToApi">取消</button>
+                    @click.prevent="cancelDataToApi">取消</button>
                     <button type="submit" class="btn btn-outline-primary ms-3"
                     @click.prevent="sendDataToApi">送出</button>
                 </form>
